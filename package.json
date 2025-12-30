@@ -1,0 +1,19 @@
+{
+  "name": "eslint-demo-project",
+  "version": "1.0.0",
+  "description": "Demo project for ESLint Technical Paper",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "lint:examples": "eslint examples"
+  },
+  "keywords": ["eslint", "linting", "demo", "javascript"],
+  "author": "Lidija Andrejic",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.50.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.0"
+  }
+}
