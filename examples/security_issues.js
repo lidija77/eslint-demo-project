@@ -1,13 +1,11 @@
 // This file demonstrates common security issues that ESLint can catch
 
-/* eslint-disable no-eval */
-
-//  SECURITY RISK: Using eval
+// Security Risk: Using eval
 function dangerousEval(userInput) {
   eval(userInput); // Never do this!
 }
 
-//  SECURITY RISK: Command injection possibility
+// Security Risk: Command injection possibility
 const { exec } = require('child_process');
 
 function runCommand(userInput) {
@@ -17,7 +15,7 @@ function runCommand(userInput) {
   });
 }
 
-//  SECURITY RISK: SQL injection possibility
+// Security Risk: SQL injection possibility
 function getUserData(userId) {
   // Dangerous: string concatenation in SQL
   const query = `SELECT * FROM users WHERE id = ${userId}`;

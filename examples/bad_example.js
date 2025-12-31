@@ -1,4 +1,4 @@
-// This file has MANY ESLint violations - try running 'npm run lint:examples' to see them!
+// This file has many ESLint violations: You can try running 'npm run lint:examples' to see them.
 
 //  Using var instead of const/let
 var userName = "Alice"

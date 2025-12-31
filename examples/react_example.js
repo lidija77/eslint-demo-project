@@ -1,27 +1,37 @@
 // React component example (requires React ESLint plugin to fully lint)
-// This shows what React-specific rules would catch
+// This demonstrates that ESLint needs proper parser configuration for JSX
 
-//  Missing React import (in older React versions)
-//  Component not using proper naming convention
-function myComponent() {
-    return <div>Hello</div>;
+// Without React parser: ESLint cannot parse JSX syntax (the < character)
+// This parsing error shows why framework specific ESLint configuration is important
+
+// WITH React ESLint plugins installed, these issues would be caught:
+// - Missing React import (in older React versions)
+// - Component naming (should start with capital letter)
+// - Missing prop-types validation
+// - Missing useEffect dependencies
+
+// Parsing error: JSX syntax not recognized
+function MyButton() {
+    return <button>Click me</button>;
 }
 
-//  Missing prop-types
-function UserCard(props) {
+// More JSX that cannot be parsed
+function Greeting({ name }) {
+    return <h1>Hello, {name}!</h1>;
+}
+
+// JSX with event handlers
+function Counter() {
     return (
         <div>
-            <h1>{props.name}</h1>
-            <p>{props.email}</p>
+            <p>Count: 0</p>
+            <button onClick={() => {}}>Increment</button>
         </div>
     );
 }
 
-//  Missing dependency in useEffect
-function ExampleComponent({ count }) {
-    useEffect(() => {
-        console.log(count);
-    }, []); // Missing 'count' in dependency array
-
-    return <div>{count}</div>;
-}
+module.exports = {
+    MyButton,
+    Greeting,
+    Counter,
+};
