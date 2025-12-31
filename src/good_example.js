@@ -7,7 +7,7 @@
  * @returns {number} Sum of a and b
  */
 function add(a, b) {
-    return a + b;
+  return a + b;
 }
 
 /**
@@ -15,23 +15,38 @@ function add(a, b) {
  * @param {string} name - User's name
  * @returns {string} Greeting message
  */
-const greetUser = (name) => {
-    const greeting = `Hello, ${name}!`;
-    return greeting;
-};
+function greetUser(name) {
+  const greeting = `Hello, ${name}!`;
+  return greeting;
+}
+
+/**
+ * Multiplies two numbers
+ * @param {number} x - First number
+ * @param {number} y - Second number
+ * @returns {number} Product of x and y
+ */
+function multiply(x, y) {
+  return x * y;
+}
 
 // Using const for values that don't change
 const PI = 3.14159;
-const result = add(5, 3);
+const radius = 5;
 
-// Proper equality check
-if (result === 8) {
-    console.log('Math works!');
-}
+// Calculate area using our functions
+const sum = add(10, 20);
+const product = multiply(radius, radius);
+const area = multiply(PI, product);
+const message = greetUser('Developer');
 
-// Export functions
+// All variables are used in exports
 module.exports = {
-    add,
-    greetUser,
-    PI
+  add,
+  greetUser,
+  multiply,
+  PI,
+  sum,
+  area,
+  message,
 };
